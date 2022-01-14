@@ -9,7 +9,7 @@ export class LastRankingLoaderService implements ILastRankingLoader {
   ) {}
 
   load = async (): Promise<IRankingScore[]> => {
-    if (new Date().getHours() > 21) {
+    if (new Date().getHours() > 23) {
       throw new RankingUnavailableError()
     }
     return await this.loadLastRankingRepository.loadLastRanking()

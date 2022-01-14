@@ -9,7 +9,7 @@ export class LoadLastRankingController implements IController {
 
   handle = async (): Promise<HttpResponse<IRankingScoreViewModel[] | String>> => {
     const ranking = await this.lastRankingLoader.load()
-
+    console.log(ranking)
     try {
       return ok(IRankingScoreViewModel.mapCollection(ranking))
     } catch (error) {
